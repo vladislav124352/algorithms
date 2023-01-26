@@ -1,5 +1,5 @@
 def ternary_search(arr, item):
-	left = 0;
+	left = 0
 	right = len(arr) - 1
 	while left <= right:
 		h = (right - left) // 3
