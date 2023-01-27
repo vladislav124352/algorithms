@@ -9,5 +9,5 @@ def binary_search(arr, item):
 		else: start = mid + 1
 	return -1
 
-arr = [2, 14, 16, 19, 52, 74, 126, 167, 178, 200, 1255];
+arr = [2, 14, 16, 19, 52, 74, 126, 167, 178, 200, 1255]
 print(binary_search(arr, 52))
