@@ -14,6 +14,3 @@ git clone https://github.com/vladislav124352/algorithms.git
 1. Add even more algorithms
 2. Add description and examples for algorithms
 3. Add examples of problems solved using these algorithms.
-
-Contact: vladpolisuk159@gmail.com
-@vladislav124352
