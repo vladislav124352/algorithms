@@ -1,19 +1,22 @@
 def insertion_sort(arr):
     for i in range(1, len(arr)):
         j = i - 1
-        while j >= 0 and arr[j] > arr[i]:
+        key = arr[i]
+        while j >= 0 and arr[j] > key:
             arr[j + 1] = arr[j]
             j -= 1
-        arr[j + 1] = arr[i]
+        arr[j + 1] = key
 
 def block_sort(arr, block_size):
+    buckets = []
+    for i in range(block_size):
+        buckets.append([])
     min_item = min(arr)
     max_item = max(arr)
-    buckets = [[] for _ in range(block_size)]
-    if min_item == max_item:
+    if min_item == max_item: 
         return
     for item in arr:
-        index = block_size * (item - min_item) // (max_item - min_item + 1)
+        index = (block_size * (item - min_item)) // (max_item - min_item + 1)
         buckets[index].append(item)
     for bucket in buckets:
         if len(bucket) <= 32:
