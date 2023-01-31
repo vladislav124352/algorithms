@@ -1,3 +1,20 @@
+# ---------------------------------------------
+# 
+# Merge Sort Algorithm
+# 
+# TIME COMPLEXITY: O(n + m)
+# MEMORY COMPLEXITY: O(n + m)
+# 
+# Merge sort is a sorting algorithm that works 
+# by dividing an unsorted list into n sublists, 
+# each containing one element, and then repeatedly 
+# merging sublists to produce new, sorted sublists 
+# until there is only one sublist remaining. 
+# It uses a divide-and-conquer approach, 
+# has a time complexity of O(n log n), and is a stable sort.
+# 
+# ---------------------------------------------
+
 ''' Merge Two Arrays '''
 
 def merge_two_arrays(arr1, arr2):
@@ -26,7 +43,7 @@ print(merged)
 
 
 
-''' Merge Subarrays '''
+''' Merge Two Subarrays '''
 
 def merge_subarrays(arr, l_start, l_end, r_start, r_end):
 	result = [0] * len(arr)

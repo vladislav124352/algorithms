@@ -1,3 +1,25 @@
+//  -----------------------------------------------------------
+// 
+//  Block Sort
+// 
+//  TIME COMPLEXITY: O(n - n^2/k), k - block size
+//  MEMORY COMPLEXITY: O(n)
+// 
+//  This algorithm does not use comparison of elements 
+//  among themselves.Purpose for sorting data, keys 
+//  that can be given in the form or revealed numbers 
+//  (algorithm for composed numbers[0, 1) but can also 
+//  be given to determine numbers). It is based on the 
+//  recursive splitting of keys into several blocks 
+//  (subranges), as soon as the block size is less 
+//  than or equal to a predetermined value(one of the 
+//  optimal sizes is 32), then it is sorted by the 
+//  entire optimal algorithm(for example, it is sorted 
+//  by insertion). After that, the sorted blocks 
+//  are combined into a sorted sequence.
+// 
+//  -----------------------------------------------------------
+
 #include <iostream>
 #include <algorithm>
 #include <vector>

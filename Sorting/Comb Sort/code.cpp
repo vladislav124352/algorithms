@@ -1,3 +1,19 @@
+// -----------------------------------------------------------
+//
+// Comb Sort
+//
+// TIME COMPLEXITY: O(n^2)
+// MEMORY COMPLEXITY: O(n)
+//
+// The comb sort algorithm is a variation of the bubble sort
+// algorithm.The essence of the algorithm is to use a gap
+// between the elements of the array, which is gradually
+// reduced.The algorithm is based on the idea that the
+// bubble sort algorithm is inefficient in the case when
+// the array is sorted in the opposite direction.
+//
+// -----------------------------------------------------------
+
 #include <iostream>
 using namespace std;
 

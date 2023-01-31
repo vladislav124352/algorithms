@@ -1,3 +1,27 @@
+//  -----------------------------------------------------------
+//  
+//  Radix Sort
+//  
+//  TIME COMPLEXITY: O(n)
+//  MEMORY COMPLEXITY: O(n + k), k - number of digits
+//  
+//  Bitwise sorting is a sorting algorithm that does not use 
+//  comparison of elements among themselves.Designed to sort 
+//  data whose keys can be represented as a sequence of "bits", 
+//  each of which can be associated with an integer.For example, 
+//  it can be integers(numbers are written explicitly), strings 
+//  (each character is a digit).The algorithm boils down to 
+//  repeating the distribution account sorting algorithm for 
+//  each digit.An important point is the way the sort keys are 
+//  "aligned", that is, how to compare keys that have a 
+//  different number of digits.Depending on how to align the 
+//  sort keys, radix sort is divided into:
+//  1) LSD(least significant digit)
+//  2) MSD(most significant digit)
+// 
+//  -----------------------------------------------------------
+
+
 // LSD (Least Significant Digit)
 const get_number_of_digits_lsd = (number) => {
     let digits = 0;

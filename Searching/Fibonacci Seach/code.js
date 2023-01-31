@@ -1,82 +1,99 @@
-/// Classic Fibonacci Search
-// class FibonacciSearch {
-//     constructor() {
-//         this.i = 0;
-//         this.p = 0;
-//         this.q = 0;
-//         this.stop = false;
-//     }
+// -----------------------------------------------------------
+//
+// Fibonacci Search
+//
+// TIME COMPLEXITY: O(log n)
+// MEMORY COMPLEXITY: O(n)
+//
+// The Fibonacci search is a comparison - based technique
+// that uses Fibonacci numbers to search an element 
+// in a sorted array.The idea is to first find the 
+// smallest Fibonacci number that is greater 
+// than or equal to the length of the given array.
+//
+// -----------------------------------------------------------
 
-//     get_fibonacci_number(n) {
-//         let first = 0;
-//         let second = 1;
-//         let length = 0;
+// Classic Fibonacci Search
+class FibonacciSearch {
+    constructor() {
+        this.i = 0;
+        this.p = 0;
+        this.q = 0;
+        this.stop = false;
+    }
 
-//         while (length < n) {
-//             let temp = first + second;
-//             first = second;
-//             second = temp;
-//             length++;
-//         }
+    get_fibonacci_number(n) {
+        let first = 0;
+        let second = 1;
+        let length = 0;
 
-//         return first;
-//     }
+        while (length < n) {
+            let temp = first + second;
+            first = second;
+            second = temp;
+            length++;
+        }
 
-//     start(arr) {
-//         this.stop = false;
-//         let k = 0;
-//         let n = arr.length;
+        return first;
+    }
 
-//         while (this.get_fibonacci_number(k + 1) < n)
-//             k++;
+    start(arr) {
+        this.stop = false;
+        let k = 0;
+        let n = arr.length;
 
-//         let m = this.get_fibonacci_number(k + 1) - (n + 1);
-//         this.i = this.get_fibonacci_number(k) - m;
-//         this.p = this.get_fibonacci_number(k - 1);
-//         this.q = this.get_fibonacci_number(k - 2);
-//     }
+        while (this.get_fibonacci_number(k + 1) < n)
+            k++;
 
-//     up_index() {
-//         if (this.p === 1)
-//             this.stop = true;
-//         this.i = this.i + this.q;
-//         this.p = this.p - this.q;
-//         this.q = this.q - this.p;
-//     }
+        let m = this.get_fibonacci_number(k + 1) - (n + 1);
+        this.i = this.get_fibonacci_number(k) - m;
+        this.p = this.get_fibonacci_number(k - 1);
+        this.q = this.get_fibonacci_number(k - 2);
+    }
 
-//     down_index() {
-//         if (this.q === 0)
-//             this.stop = true;
-//         this.i = this.i - this.q;
-//         let temp = this.q;
-//         this.q = this.p - this.q;
-//         this.p = temp;
-//     }
+    up_index() {
+        if (this.p === 1)
+            this.stop = true;
+        this.i = this.i + this.q;
+        this.p = this.p - this.q;
+        this.q = this.q - this.p;
+    }
 
-//     search(arr, item) {
-//         this.start(arr);
-//         let result = -1;
+    down_index() {
+        if (this.q === 0)
+            this.stop = true;
+        this.i = this.i - this.q;
+        let temp = this.q;
+        this.q = this.p - this.q;
+        this.p = temp;
+    }
 
-//         while (!this.stop) {
-//             if (this.i < 0)
-//                 this.up_index();
-//             else if (this.i >= arr.length)
-//                 this.down_index();
-//             else if (arr[this.i] === item) {
-//                 result = this.i;
-//                 break;
-//             } else if (arr[this.i] > item)
-//                 this.down_index();
-//             else
-//                 this.up_index();
-//         }
+    search(arr, item) {
+        this.start(arr);
+        let result = -1;
 
-//         return result;
-//     }
-// }
+        while (!this.stop) {
+            if (this.i < 0)
+                this.up_index();
+            else if (this.i >= arr.length)
+                this.down_index();
+            else if (arr[this.i] === item) {
+                result = this.i;
+                break;
+            } else if (arr[this.i] > item)
+                this.down_index();
+            else
+                this.up_index();
+        }
+
+        return result;
+    }
+}
+
+
 
 /// Optimized Fibonacci Search
-class FibonacciSearch {
+class FibonacciSearch2 {
     constructor() {
         this.stop = false;
         this.fib_numbers = {};
@@ -135,6 +152,6 @@ class FibonacciSearch {
 
 const arr = [-2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const item = 5;
-const search = new FibonacciSearch();
+const search = new FibonacciSearch2();
 const result = search.search(arr, item);
 console.log(result);

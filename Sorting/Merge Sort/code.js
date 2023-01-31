@@ -1,3 +1,21 @@
+// -----------------------------------------------------------
+//
+// Merge Sort
+//
+// TIME COMPLEXITY: O(n log n)
+// MEMORY COMPLEXITY: O(n)
+//
+// Merge sort is a divide and conquer algorithm. It divides
+// the input array into two halves, calls itself for the two
+// halves, and then merges the two sorted halves. The merge()
+// function is used for merging two halves. There are two 
+// versions of merge sort: recursive and classic the recursive 
+// version is more elegant, but the classic version is more 
+// efficient 
+//
+// -----------------------------------------------------------
+
+
 function merge(arr, l_start, l_end, r_start, r_end) {
 	let support = [...arr];
 	let left = l_start;
@@ -34,9 +52,9 @@ function merge_sort(arr) {
 			let l_start = start;
 			let l_end = start + size - 1;
 			let r_start = start + size;
-			let r_end = Math.min(start + 2*size - 1, length - 1);
+			let r_end = Math.min(start + 2 * size - 1, length - 1);
 			merge(arr, l_start, l_end, r_start, r_end);
-			start += 2*size;
+			start += 2 * size;
 		}
 
 		size *= 2;

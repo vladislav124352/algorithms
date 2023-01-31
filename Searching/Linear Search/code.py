@@ -1,3 +1,16 @@
+# -----------------------------------------------------------
+#
+# Linear Search
+#
+# TIME COMPLEXITY: O(n)
+# MEMORY COMPLEXITY: O(n)
+#
+# The linear search is a very simple search algorithm. It
+# sequentially checks each element of the list until a match
+# is found or the whole list has been searched.
+#
+# -----------------------------------------------------------
+
 def linear_search(arr, item):
 	for i in range(len(arr)):
 		if arr[i] == item:

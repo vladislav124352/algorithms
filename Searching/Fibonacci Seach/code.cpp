@@ -1,3 +1,18 @@
+// -----------------------------------------------------------
+//
+// Fibonacci Search
+//
+// TIME COMPLEXITY: O(log n)
+// MEMORY COMPLEXITY: O(n)
+//
+// The Fibonacci search is a comparison - based technique
+// that uses Fibonacci numbers to search an element 
+// in a sorted array.The idea is to first find the 
+// smallest Fibonacci number that is greater 
+// than or equal to the length of the given array.
+//
+// -----------------------------------------------------------
+
 #include <iostream>
 #include <vector>
 using namespace std;

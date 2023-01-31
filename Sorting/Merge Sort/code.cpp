@@ -1,3 +1,21 @@
+//  -----------------------------------------------------------
+// 
+//  Merge Sort
+// 
+//  TIME COMPLEXITY: O(n log n)
+//  MEMORY COMPLEXITY: O(n)
+// 
+//  Merge sort is a divide and conquer algorithm. It divides
+//  the input array into two halves, calls itself for the two
+//  halves, and then merges the two sorted halves. The merge()
+//  function is used for merging two halves. There are two 
+//  versions of merge sort: recursive and classic the recursive 
+//  version is more elegant, but the classic version is more 
+//  efficient 
+// 
+//  -----------------------------------------------------------
+
+
 #include <iostream>
 #include <cmath>
 using namespace std;
@@ -7,68 +25,68 @@ void merge_sort(int arr[], int arr_length);
 void merge_sort2(int arr[], int arr_length, int start = 0, int end = -1);
 
 int main() {
-        // Classic Merge Sort
-        int arr[8] = {12, 5, 2, -7, 0, -2, 8, 10};
-        int result[8] = {0};
-        merge_sort(arr, 8);
-        for (int item : arr)
-                cout << item << " ";
-        cout << endl;
+	// Classic Merge Sort
+	int arr[8] = {12, 5, 2, -7, 0, -2, 8, 10};
+	int result[8] = {0};
+	merge_sort(arr, 8);
+	for (int item : arr)
+		cout << item << " ";
+	cout << endl;
 
-        // Recursive Merge Sort
-        int arr2[8] = {12, 5, 2, -7, 0, -2, 8, 10};
-        int result2[8] = {0};
-        merge_sort2(arr2, 8);
-        for (int item : arr)
-                cout << item << " ";
-        cout << endl;
+	// Recursive Merge Sort
+	int arr2[8] = {12, 5, 2, -7, 0, -2, 8, 10};
+	int result2[8] = {0};
+	merge_sort2(arr2, 8);
+	for (int item : arr)
+		cout << item << " ";
+	cout << endl;
 
-        return 0;
+	return 0;
 }
 
 void merge(int arr[], int arr_length, int l_start, int l_end, int r_start, int r_end) {
-        int support[arr_length] = {0};
-        for (int i = 0; i < arr_length; i++)
-                support[i] = arr[i];
-        int left = l_start;
-        int right = r_start;
+	int support[arr_length] = {0};
+	for (int i = 0; i < arr_length; i++)
+		support[i] = arr[i];
+	int left = l_start;
+	int right = r_start;
 
-        for (int i = l_start; i < r_end + 1; i++) {
-                if (left > l_end) {
-                        arr[i] = support[right];
-                        right++;
-                } else if (right > r_end) {
-                        arr[i] = support[left];
-                        left++;
-                } else if (support[left] < support[right]) {
-                        arr[i] = support[left];
-                        left++;
-                } else {
-                        arr[i] = support[right];
-                        right++;
-                }
-        }
+	for (int i = l_start; i < r_end + 1; i++) {
+		if (left > l_end) {
+			arr[i] = support[right];
+			right++;
+		} else if (right > r_end) {
+			arr[i] = support[left];
+			left++;
+		} else if (support[left] < support[right]) {
+			arr[i] = support[left];
+			left++;
+		} else {
+			arr[i] = support[right];
+			right++;
+		}
+	}
 }
 
 // Classic Merge Sort
 void merge_sort(int arr[], int arr_length) {
-        int size = 1;
-        int length = arr_length;
+	int size = 1;
+	int length = arr_length;
 
-        while (size < length) {
-                int start = 0;
+	while (size < length) {
+		int start = 0;
 
-                while (start < length - size) {
-                        int l_start = start;
-                        int l_end = start + size - 1;
-                        int r_start = start + size;
-                        int r_end = min(start + 2*size - 1, length - 1);
-                        merge(arr, arr_length, l_start, l_end, r_start, r_end);
-                        start += 2*size;
-                }
+		while (start < length - size) {
+			int l_start = start;
+			int l_end = start + size - 1;
+			int r_start = start + size;
+			int r_end = min(start + 2*size - 1, length - 1);
+			merge(arr, arr_length, l_start, l_end, r_start, r_end);
+			start += 2*size;
+	}
 
-                size *= 2;
-        }
+		size *= 2;
+	}
 }
 
 // Recursive Merge Sort

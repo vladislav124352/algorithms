@@ -1,3 +1,17 @@
+# -----------------------------------------------------------
+#
+# Selection Sort
+#
+# TIME COMPLEXITY: O(n^2)
+# MEMORY COMPLEXITY: O(n)
+#
+# The selection sort algorithm sorts an array by repeatedly
+# finding the minimum element (considering ascending order)
+# from unsorted part and putting it at the beginning. The
+# algorithm maintains two subarrays in a given array.
+#
+# -----------------------------------------------------------
+
 def selection_sort(arr):
 	for i in range(len(arr) - 1):
 		min_i = i

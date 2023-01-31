@@ -1,3 +1,20 @@
+# -----------------------------------------------------------
+#
+# Distribution Counting Sort
+#
+# TIME COMPLEXITY: O(n)
+# MEMORY COMPLEXITY: O(n + k), k - range of numbers
+#
+# Distributive counting sort is a variation of counting sort. 
+# Used to sort arrays of data whose sort keys are represented 
+# by integers and their values lie in a relatively narrow range. 
+# For example, if you need to sort an array of cats by age, 
+# then this algorithm will show very high performance. 
+# The important and positive point is that it is a 
+# stable sorting algorithm.
+#
+# -----------------------------------------------------------
+
 def dist_counting_sort(arr):
 	min_item = min(arr)
 	max_item = max(arr)

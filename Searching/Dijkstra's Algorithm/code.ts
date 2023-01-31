@@ -1,3 +1,24 @@
+// -----------------------------------------------------------
+//
+// Dijkstra's Algorithm
+//
+// TIME COMPLEXITY: O((|V| + |E|) log V)
+// MEMORY COMPLEXITY: O(|V| + |E|)
+//
+// Dijkstra's Algorithm is a graph search algorithm 
+// that finds the shortest path between a source node
+// and all other nodes in a weighted graph. 
+// It uses a priority queue to determine the next 
+// node to visit and updates the distance to every 
+// other node based on the current node's distance. 
+// The algorithm continues until the destination node 
+// is reached or all nodes have been processed. 
+// It has a time complexity of O(E + V log V) 
+// where E is the number of edges and V is the 
+// number of vertices in the graph.
+//
+// -----------------------------------------------------------
+
 const graph2 = {};
 graph2["start"] = {};
 graph2["start"]["a"] = 6;

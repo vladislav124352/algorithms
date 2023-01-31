@@ -1,3 +1,20 @@
+#  -----------------------------------------------------------
+# 
+#  Merge Sort
+# 
+#  TIME COMPLEXITY: O(n log n)
+#  MEMORY COMPLEXITY: O(n)
+# 
+#  Merge sort is a divide and conquer algorithm. It divides
+#  the input array into two halves, calls itself for the two
+#  halves, and then merges the two sorted halves. The merge()
+#  function is used for merging two halves. There are two 
+#  versions of merge sort: recursive and classic the recursive 
+#  version is more elegant, but the classic version is more 
+#  efficient 
+# 
+#  -----------------------------------------------------------
+
 def merge(arr, l_start, l_end, r_start, r_end):
 	support = [i for i in arr]
 	left = l_start
