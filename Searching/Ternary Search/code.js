@@ -1,3 +1,19 @@
+//  -----------------------------------------------------------
+// 
+//  Ternary Search
+// 
+//  TIME COMPLEXITY: O(log n)
+//  MEMORY COMPLEXITY: O(n)
+// 
+//  The ternary search algorithm is a divide and conquer algorithm
+//  that can be used to find an element in an array. It is similar
+//  to binary search where we divide the array into two parts but
+//  in this algorithm, we divide the given array into three parts
+//  and determine which has the key (searched element).
+// 
+//  -----------------------------------------------------------
+
+
 function ternary_search(arr, item) {
 	let left = 0;
 	let right = arr.length - 1;
